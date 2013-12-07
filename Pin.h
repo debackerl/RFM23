@@ -45,14 +45,14 @@
 class \
 { \
 public: \
-	void high() { PORT ## LETTER |= _BV(P ## LETTER ## NUMBER); } \
-	void low() { PORT ## LETTER &= ~_BV(P ## LETTER ## NUMBER); } \
+	void high() { PORT ## LETTER |= _BV(NUMBER); } \
+	void low() { PORT ## LETTER &= ~_BV(NUMBER); } \
 	void write(bool bit) { if(bit) high(); else low(); } \
-	bool state() { return PORT ## LETTER & _BV(P ## LETTER ## NUMBER); } \
-	bool read() { return (PIN ## LETTER >> (P ## LETTER ## NUMBER)) & 1; } \
+	bool state() { return PORT ## LETTER & _BV(NUMBER); } \
+	bool read() { return (PIN ## LETTER >> (NUMBER)) & 1; } \
 	\
-	void output() { DDR ## LETTER |= _BV(DD ## LETTER ## NUMBER); } \
-	void input() { DDR ## LETTER &= ~_BV(DD ## LETTER ## NUMBER); } \
+	void output() { DDR ## LETTER |= _BV(NUMBER); } \
+	void input() { DDR ## LETTER &= ~_BV(NUMBER); } \
 }
 
 #endif

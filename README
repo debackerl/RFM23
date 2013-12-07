@@ -1,0 +1,28 @@
+This is a driver for the HopeRF's RFM23B module written in C++ for Arduinos.
+
+By default, the driver uses the RF module at full power, making it possible to transmit messages up to 30 meters inside a building.
+
+This project includes a lightweight scheduler used to execute periodic tasks, and defer task execution till current task is completed. Other schedulers could be used if they offer millisecond precision and task preemption.
+
+This C++ code does not make use of heap memory, making it embedded systems friendly. Only stack and static memories are used (only one module can be connected to the Arduino).
+
+Features:
+* 57.6 kbps @ 1% Duty Cycle over last second to meet regulation
+* Carrier Sense
+* Listen Before Talk
+* CRC
+* Auto retransmit point-to-point packets with exponential backoff
+* Up to 60-bytes long packets
+* Point-to-point and Broadcast
+* 63 addresses
+* Encryption using XXTEA
+* Replay attack detection
+* ACK to confirm message delivery
+* Temperature reading
+* ADC
+
+Radio frequency, synchronization word (used as wireless packet boundary), encryption key, and node id are all configured at run-time. Other settings have to be configured at compilation time.
+
+This project is not affiliated with HopeRF.
+
+Link to RBM23C's product page: http://www.hoperf.com/rf_fsk/fsk/rfm23b.htm

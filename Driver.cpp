@@ -112,18 +112,19 @@
 
 // RAM Usage: 303 bytes
 
-#include "RFM23.h"
+#include "Driver.h"
 #include "delay_x.h"
-#include "Common/Pin.h"
-#include "Common/Scheduler.h"
-#include "Common/XorShift.h"
+#include "Pin.h"
+#include "Scheduler.h"
+#include "XorShift.h"
 #include "xxtea.h"
 #include <alloca.h>
 #include <math.h>
 #include <string.h>
+#include <avr/io.h>
 #include <util/atomic.h>
 
-//#define RFM23_DEBUG2
+//#define RFM23_DEBUG
 //#define SHOW_RSSI
 
 #define DUTY_CYCLE_MAX_BYTES 144
